@@ -20,7 +20,7 @@ uploaded_file = st.file_uploader("Upload CSV Dataset", type=["csv"])
 
 if uploaded_file:
 
-    df = pd.read_csv(uploaded_file)
+    df = pd.read_csv(uploaded_file, encoding="latin1")
 
     st.subheader("📊 Raw Dataset")
     st.dataframe(df.head())
@@ -121,3 +121,4 @@ if uploaded_file:
 
 else:
     st.info("Please upload NSL-KDD dataset CSV to start detection.")
+
